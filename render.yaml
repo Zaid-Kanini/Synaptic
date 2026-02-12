@@ -5,11 +5,13 @@ services:
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000 --log-level info
     envVars:
       # Python configuration
       - key: PYTHON_VERSION
         value: 3.11
+      - key: PORT
+        value: 10000
       - key: SYNAPTIC_LOG_LEVEL
         value: INFO
       

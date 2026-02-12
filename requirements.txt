@@ -18,3 +18,7 @@ python-dotenv>=1.0.0,<2.0.0
 
 # Module 3: GraphRAG Pipeline
 openai>=1.40.0,<2.0.0
+
+# CPU-only PyTorch (required for Render/cloud deployment without GPU)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
