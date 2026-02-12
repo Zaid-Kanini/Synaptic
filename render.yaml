@@ -1,0 +1,59 @@
+services:
+  # Backend API Service
+  - type: web
+    name: synaptic-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      # Python configuration
+      - key: PYTHON_VERSION
+        value: 3.11
+      - key: SYNAPTIC_LOG_LEVEL
+        value: INFO
+      
+      # Neo4j/Graph Database Configuration
+      - key: SYNAPTIC_NEO4J_URI
+        value: neo4j+ssc://5cbef9f2.databases.neo4j.io
+      - key: SYNAPTIC_NEO4J_USER
+        value: neo4j
+      - key: SYNAPTIC_NEO4J_DATABASE
+        value: neo4j
+      
+      # Embedding Configuration
+      - key: SYNAPTIC_EMBEDDING_MODEL
+        value: all-MiniLM-L6-v2
+      - key: SYNAPTIC_EMBEDDING_BATCH_SIZE
+        value: 200
+      
+      # GraphRAG Configuration
+      - key: SYNAPTIC_RAG_TOP_K
+        value: 5
+      - key: SYNAPTIC_RAG_EXPAND_DEPTH
+        value: 2
+      - key: SYNAPTIC_RAG_MAX_NODES
+        value: 15
+      - key: SYNAPTIC_RAG_MAX_CONTEXT_CHARS
+        value: 12000
+      
+      # Azure OpenAI Configuration (set these in Render Dashboard)
+      - key: SYNAPTIC_OPENAI_API_KEY
+        sync: false  # Prompt for this value during deployment
+      - key: SYNAPTIC_OPENAI_MODEL
+        value: gpt-5-mini
+      - key: SYNAPTIC_AZURE_ENDPOINT
+        sync: false  # Prompt for this value during deployment
+      
+      # File configuration
+      - key: SYNAPTIC_MAX_FILE_SIZE_BYTES
+        value: 1048576
+    
+    # Health check endpoint
+    healthCheckPath: /docs
+    
+    # Auto-deploy from main branch
+    autoDeploy: true
+    
+    # Zero-downtime deployment
+    zeroDowntime: true
