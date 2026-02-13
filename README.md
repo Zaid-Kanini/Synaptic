@@ -179,6 +179,9 @@ The UI will be available at `http://localhost:3000`.
   }
 }
 ```
+## Sample Output
+![alt text](<Screenshot 2026-02-13 155052-1.png>) 
+![alt text](<Screenshot 2026-02-13 155022-1.png>)
 
 ## Supported Languages
 
