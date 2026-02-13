@@ -12,7 +12,7 @@ import urllib.parse
 import urllib.request
 
 BASE = "http://localhost:8000"
-REPO = "D:/Practice/python/Synapse/test_repo"
+REPO = "D:\Practice\python\Synapse\Kanini-Interns-Leaderboard"
 
 
 def post_json(url: str, body: dict) -> dict:

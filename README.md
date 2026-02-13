@@ -65,6 +65,7 @@ Synapse/
             ├── api.js                   # Fetch wrapper for /rag/query
             └── graphUtils.js            # Graph data builder + node lookup
 ```
+![alt text](<Screenshot 2026-02-12 230852.png>)
 
 ## Quick Start
 

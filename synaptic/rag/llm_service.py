@@ -93,7 +93,7 @@ class LLMService:
         azure_endpoint: str,
         deployment: str = "gpt-5-mini",
         temperature: float = 0.2,
-        max_tokens: int = 2048,
+        max_tokens: int = 8192,
         api_version: str = "2024-12-01-preview",
     ) -> None:
         self._client = AzureOpenAI(
@@ -143,7 +143,19 @@ class LLMService:
             max_completion_tokens=self.max_tokens,
         )
 
-        answer = response.choices[0].message.content or ""
+        choice = response.choices[0] if response.choices else None
+        finish_reason = choice.finish_reason if choice else "no_choice"
+        raw_content = choice.message.content if choice and choice.message else None
+
+        logger.info(
+            "llm_response_debug",
+            finish_reason=finish_reason,
+            has_content=raw_content is not None,
+            content_len=len(raw_content) if raw_content else 0,
+            content_preview=raw_content[:200] if raw_content else "NONE",
+        )
+
+        answer = raw_content or ""
 
         logger.info(
             "llm_response",

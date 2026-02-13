@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "highlight.js/styles/github-dark.css";
+@import "highlight.js/styles/github.css";
 
 :root {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -10,8 +10,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #0a0a0f;
-  color: #e2e8f0;
+  background-color: #ffffff;
+  color: #1e293b;
 }
 
 #root {
@@ -23,20 +23,20 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #cbd5e1;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #94a3b8;
 }
 
 /* Markdown code blocks */
 .markdown-body pre {
-  background: #0d1117 !important;
-  border: 1px solid #1e293b;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
   padding: 1rem;
   overflow-x: auto;
@@ -50,15 +50,15 @@ body {
 }
 
 .markdown-body :not(pre) > code {
-  background: #1e293b;
+  background: #f1f5f9;
   padding: 0.15em 0.4em;
   border-radius: 4px;
-  color: #7dd3fc;
+  color: #0369a1;
 }
 
 .markdown-body h1, .markdown-body h2, .markdown-body h3 {
-  color: #f1f5f9;
-  border-bottom: 1px solid #1e293b;
+  color: #0f172a;
+  border-bottom: 1px solid #e2e8f0;
   padding-bottom: 0.3em;
   margin-top: 1.5em;
 }
@@ -72,11 +72,11 @@ body {
 }
 
 .markdown-body a {
-  color: #38bdf8;
+  color: #0284c7;
 }
 
 .markdown-body strong {
-  color: #f1f5f9;
+  color: #0f172a;
 }
 
 /* Pulse animation for loading */

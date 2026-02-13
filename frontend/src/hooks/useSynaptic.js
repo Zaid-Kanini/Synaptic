@@ -48,11 +48,8 @@ export function useSynaptic() {
     if (graphRef.current && nodeId) {
       const node = graphData.nodes.find((n) => n.id === nodeId);
       if (node) {
-        graphRef.current.cameraPosition(
-          { x: node.x + 80, y: node.y + 80, z: node.z + 80 },
-          { x: node.x, y: node.y, z: node.z },
-          1000
-        );
+        graphRef.current.centerAt(node.x, node.y, 800);
+        graphRef.current.zoom(4, 800);
       }
     }
   }, [graphData.nodes]);

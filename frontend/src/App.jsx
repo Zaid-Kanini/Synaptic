@@ -26,9 +26,9 @@ export default function App() {
   );
 
   return (
-    <div className="h-screen w-screen flex bg-[#0a0a0f]">
+    <div className="h-screen w-screen flex bg-white">
       {/* Left: Chat */}
-      <div className="w-1/2 min-w-[400px] border-r border-slate-800 flex flex-col">
+      <div className="w-1/2 min-w-[400px] border-r border-slate-200 flex flex-col">
         <ChatPane
           messages={messages}
           loading={loading}
@@ -39,7 +39,7 @@ export default function App() {
         />
       </div>
 
-      {/* Right: 3D Graph */}
+      {/* Right: 2D Graph */}
       <div className="flex-1 flex flex-col">
         <GraphPane
           graphData={graphData}

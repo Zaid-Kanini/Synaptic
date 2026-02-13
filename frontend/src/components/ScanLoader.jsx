@@ -9,11 +9,11 @@ const steps = [
 
 export default function ScanLoader() {
   return (
-    <div className="flex flex-col gap-4 p-6 rounded-xl border border-cyan-500/20 bg-cyan-500/5">
-      <div className="flex items-center gap-2 text-cyan-400 text-sm font-semibold tracking-wide uppercase">
+    <div className="flex flex-col gap-4 p-6 rounded-xl border border-blue-200 bg-blue-50/50">
+      <div className="flex items-center gap-2 text-blue-600 text-sm font-semibold tracking-wide uppercase">
         <div className="relative h-2 w-2">
-          <span className="absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75 animate-ping" />
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500" />
+          <span className="absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75 animate-ping" />
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" />
         </div>
         Scanning Repository...
       </div>
@@ -25,13 +25,13 @@ export default function ScanLoader() {
             className="flex items-center gap-3 animate-pulse-glow"
             style={{ animationDelay: `${i * 0.5}s` }}
           >
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-800 border border-slate-700">
-              <step.icon size={14} className="text-cyan-400" />
+            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-white border border-slate-200 shadow-sm">
+              <step.icon size={14} className="text-blue-500" />
             </div>
             <div className="flex-1">
-              <div className="h-2 rounded-full bg-slate-700 overflow-hidden">
+              <div className="h-2 rounded-full bg-slate-200 overflow-hidden">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 animate-pulse"
+                  className="h-full rounded-full bg-gradient-to-r from-blue-400 to-indigo-500 animate-pulse"
                   style={{
                     width: '60%',
                     animationDelay: `${i * 0.3}s`,
@@ -44,8 +44,8 @@ export default function ScanLoader() {
         ))}
       </div>
 
-      <div className="relative h-1 w-full rounded-full bg-slate-800 overflow-hidden mt-2">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent animate-scan" />
+      <div className="relative h-1 w-full rounded-full bg-slate-200 overflow-hidden mt-2">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent animate-scan" />
       </div>
     </div>
   );

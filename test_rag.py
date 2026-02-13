@@ -17,6 +17,9 @@ from __future__ import annotations
 import sys
 import os
 
+# Fix Windows console encoding for Unicode characters.
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 # Ensure project root is on path.
 sys.path.insert(0, os.path.dirname(__file__))
 
@@ -27,7 +30,7 @@ from synaptic.rag.pipeline import GraphRAGPipeline
 
 
 def main() -> None:
-    repo_path = r"D:\Practice\python\Synapse\test_repo"
+    repo_path = r"D:\Practice\python\Synapse\Kanini-Interns-Leaderboard"
 
     if not os.path.isdir(repo_path):
         print(f"[ERROR] Repository not found: {repo_path}")
@@ -36,9 +39,7 @@ def main() -> None:
     pipeline = GraphRAGPipeline(repo_root=repo_path)
 
     questions = [
-        "How is user data validated?",
-        "What functions handle analytics tracking?",
-        "Explain the main entry point of the application.",
+        "How login works in backend?",
     ]
 
     for i, question in enumerate(questions, 1):
